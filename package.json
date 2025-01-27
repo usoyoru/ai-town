@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "npm-run-all --parallel dev:frontend dev:backend",
-    "build": "tsc && vite build",
+    "build": "npx convex deploy && tsc && vite build",
     "lint": "eslint .",
-    "predev": "just convex dev --run init --until-success && convex dashboard",
-    "dev:backend": "just convex dev --tail-logs",
+    "predev": "npx convex dev --run init --until-success",
+    "dev:backend": "npx convex dev --tail-logs",
     "dev:frontend": "vite",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose",
     "le": "vite src/editor/"
