@@ -3,13 +3,13 @@
 export const LLM_CONFIG = {
   /* Ollama (local) config:
    */
-  ollama: true,
-  url: 'http://127.0.0.1:11434',
-  chatModel: 'llama3' as const,
-  embeddingModel: 'mxbai-embed-large',
-  embeddingDimension: 1024,
-  stopWords: ['<|eot_id|>'],
-  apiKey: () => undefined,
+  ollama: false,
+  url: 'https://api.openai.com',
+  chatModel: 'gpt-3.5-turbo',
+  embeddingModel: 'text-embedding-ada-002',
+  embeddingDimension: 1536,
+  stopWords: [],
+  apiKey: () => process.env.OPENAI_API_KEY ?? process.env.LLM_API_KEY,
   // embeddingModel: 'llama3',
   // embeddingDimension: 4096,
 
